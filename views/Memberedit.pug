@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous")
+
+        title Edit Member
+    body 
+        center 
+            form(action="/member/edit", method="post" enctype="multipart/form-data") 
+                input(type="hidden", name="id" value=`${List._id}`)
+                table 
+                    tr 
+                        th Name 
+                        td 
+                            input.form-control.rounded.shadow-lg.mx-2(type="text", name="name" value=`${List.name}`) 
+                    br
+                    tr 
+                        th Photo 
+                        td 
+                            input.form-control.rounded.shadow-lg.mx-2(type="file", name="photo")
+                    br
+                    tr 
+                        th Age 
+                        td 
+                            input.form-control.rounded.shadow-lg.mx-2(type="number", name="age" value=`${List.age}`)
+                    br
+                    tr 
+                        th Email 
+                        td 
+                            input.form-control.rounded.shadow-lg.mx-2(type="text", name="email" value=`${List.email}`)
+                    br
+                    tr 
+                        td 
+                        td 
+                            input.btn.btn-success.rounded.shadow-lg(type="submit", value="Update")
